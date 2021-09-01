@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     //boton de reinicio
     private Button botonReiniciar;
 
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint({"ClickableViewAccessibility", "WrongViewCast"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,7 +109,8 @@ public class MainActivity extends AppCompatActivity {
                if(puntaje<=0){
                    Toast.makeText(this,"perdiste", Toast.LENGTH_SHORT).show();
                    tiempoRestante=0;
-                   contadorText.setText(""+ tiempoRestante);         //si el puntaje es menor o igual a cero,el tiempo automaticamente cambia a cero y aparece le boton de "intentar de nuevo"
+                   contadorText.setText(""+ tiempoRestante);
+                   botonResponder.setEnabled(false);                                         //si el puntaje es menor o igual a cero,el tiempo automaticamente cambia a cero y aparece le boton de "intentar de nuevo"
                    botonReiniciar.setVisibility(View.VISIBLE);
                }
            }
@@ -125,11 +126,12 @@ public class MainActivity extends AppCompatActivity {
         private void pierdePorTiempo(){
         if(tiempoRestante==0){
             botonReiniciar.setVisibility(View.VISIBLE);
+            botonResponder.setEnabled(false);
         } }
     //--------------------------------------------------------------------------------------------------
         private void iniciarJuego(){
-
         generarNuevaPregunta();
+        botonResponder.setEnabled(true);
         botonReiniciar.setVisibility(View.INVISIBLE);
         puntaje=0;
         puntajeText.setText("Puntaje:"+puntaje);

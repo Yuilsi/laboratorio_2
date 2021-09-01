@@ -8,21 +8,27 @@
 
     <Button
         android:id="@+id/botonResponder"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="214dp"
         android:layout_height="42dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="24dp"
         android:text="Responder"
-        android:textColor="@color/white"
+        android:textColor="#EBFFFFFF"
+        android:textColorLink="#2196F3"
+        android:textStyle="normal"
         app:backgroundTint="#3F51B5"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/respuestaUsuario" />
 
     <Button
         android:id="@+id/botonReiniciar"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="214dp"
         android:layout_height="42dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="52dp"
+        android:autoText="true"
         android:text="Intentar de nuevo"
         android:textColor="@color/white"
         android:visibility="invisible"
@@ -45,13 +51,12 @@
 
     <EditText
         android:id="@+id/respuestaUsuario"
-        style="@style/Widget.AppCompat.AutoCompleteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Respuesta"
+        android:hint="Respuesta"
+        android:inputType="number|textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
